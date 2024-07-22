@@ -1,107 +1,119 @@
-@charset "UTF-8";
 /* CSS Document */
 
 body {
-	text-align: center;
-	font-family: 'Muli', Helvetica, Arial, sans-serif;
-	font-size: 140%;
+    text-align: center;
+    font-family: 'Muli', Helvetica, Arial, sans-serif;
+    font-size: 140%;
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: 'Ovo', sans-serif;
+    font-family: 'Ovo', sans-serif;
 }
 h1 {
-	font-size: 300%;
+    font-size: 300%;
 }
 
 .button {
-	background-color: #44c767;
-	-moz-border-radius: 28px;
-	-webkit-border-radius: 28px;
-	border-radius: 28px;
-	border: 1px solid #18ab29;
-	display: inline-block;
-	cursor: pointer;
-	color: #ffffff;
-	font-family: arial;
-	font-size: 17px;
-	padding: 16px 31px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #2f6627;
+    background-color:#44c767;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:arial;
+    font-size:17px;
+    padding:16px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
 }
 .button:hover {
-	background-color: #5cbf2a;
+    background-color:#5cbf2a;
 }
 .button:active {
-	position: relative;
-	top: 1px;
+    position:relative;
+    top:1px;
 }
 label {
-	display: block;
+    display: block;
 }
 input.text {
-	border-style: solid;
-	font-size: 24px;
-	box-shadow: 3px 2px 5px 0px rgba(42, 42, 42, .75);
-	padding: 5px;
-	border-width: 1px;
-	border-radius: 1px;
-	border-color: #363636;
-	text-align: center;
+    border-style:solid;
+    font-size:24px;
+    box-shadow: 3px 2px 5px 0px rgba(42,42,42,.75);
+    padding:5px;
+    border-width:1px;
+    border-radius:1px;
+    border-color:#363636;
+    text-align: center;
 }
 
 textarea {
-	border-style: solid;
-	font-size: 14px;
-	box-shadow: 3px 2px 5px 0px rgba(42, 42, 42, .75);
-	padding: 5px;
-	border-width: 1px;
-	border-radius: 1px;
-	border-color: #363636;
-	text-align: left;
+    border-style:solid;
+    font-size:14px;
+    box-shadow: 3px 2px 5px 0px rgba(42,42,42,.75);
+    padding:5px;
+    border-width:1px;
+    border-radius:1px;
+    border-color:#363636;
+    text-align: left;
 }
 
-/* Danh sách */
-ul.quicklist {
-	list-style-type: none;
-	text-align: left;
-	margin: 0px;
-	padding: 0px;
-	font-size: 24px;
-}
-ul.quicklist li {
-	padding: 0px 0px 14px 0px;
-	margin: 0px 0px 14px 0px;
-	border-bottom: 1px solid #ccc;
-}
+/* List Formatting */
+ul.quicklist {list-style-type: none; text-align: left; margin: 0px; padding: 0px; font-size: 24px;}
+ul.quicklist li {padding: 0px 0px 14px 0px; margin: 0px 0px 14px 0px; border-bottom: 1px solid #ccc; }
 ul.quicklist li a {
-	display: block;
-	text-decoration: none;
-	background-size: contain;
-	padding: 12px 72px;
+    display: block;
+    text-decoration: none;
+    background-size: contain;
+    padding: 12px 72px;
 }
 ul.quicklist li a:hover {
-	background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
 
 .image {
-	max-width: 70%;
-	height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
-/* Trạng thái nút */
+.thumbnail-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.thumbnails {
+    flex: 1;
+}
+
+.ad-side {
+    width: 300px;
+    height: 250px;
+    margin-right: 20px;
+}
+
+.ad-main {
+    margin: 20px 0;
+}
+
+#ad-footer {
+    margin-top: 20px;
+}
+
+/* Button States */
 a.state0 {
-	color: #000;
-	background: #fff url("images/tick0.png") no-repeat left top;
+    color: #000;
+    background: #fff url("images/tick0.png") no-repeat left top;
 }
 a.state1, a.state0.done {
-	color: #CCC;
-	text-decoration: line-through !important;
-	background: #fff url("images/tick1.png") no-repeat left top;
-	background-size: contain;
+    color: #CCC;
+    text-decoration:line-through !important;
+    background: #fff url("images/tick1.png") no-repeat left top;
 }
-
-#ask {
-	font-size: 80%;
-	font-style: italic;
+a.state2 {
+    color: #000;
+    background: #fff url("images/tick2.png") no-repeat left top;
 }
