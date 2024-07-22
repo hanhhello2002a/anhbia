@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Công cụ đơn giản cho phép bạn tải xuống hình thu nhỏ của bất kỳ video YouTube nào bằng cách nhập URL của video. Công cụ đơn giản và thanh lịch.">
+    <meta name="description" content="Công cụ đơn giản cho phép bạn tải xuống hình thu nhỏ của bất kỳ video YouTube nào bằng cách nhập URL của video.">
     <meta property="og:title" content="Lấy Hình Thu Nhỏ Video YouTube">
     <meta property="og:image" content="http://www.get-youtube-thumbnail.com/get-youtube-image.png">
     <meta property="og:site_name" content="Lấy Hình Thu Nhỏ Video YouTube">
-    <meta property="og:description" content="Tải xuống hình thu nhỏ mặc định của bất kỳ video YouTube nào với công cụ đơn giản và thanh lịch này.">
+    <meta property="og:description" content="Tải xuống hình thu nhỏ mặc định của bất kỳ video YouTube nào với công cụ đơn giản này.">
     <title>Lấy Hình Thu Nhỏ Video YouTube</title>
     <link href="https://fonts.googleapis.com/css?family=Muli:400,700,400italic,700italic|Ovo" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -20,12 +20,8 @@
                 var yti = ytl.match(/(?:https?:\/\/)?(?:www\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
                 if (yti) {
                     $("#msg").html(`<h1>Hình Thu Nhỏ YouTube</h1>
-                                    <p><img src="https://i3.ytimg.com/vi/${yti[1]}/maxresdefault.jpg" class="image" /></p>
-                                    <p><img src="https://i3.ytimg.com/vi/${yti[1]}/hqdefault.jpg" class="image" /></p>
-                                    <h2>URL Hình Ảnh:</h2>
-                                    <br /><input name="imageURL" id="copyimageURL1" class="text" size="70" type="text" value="https://i3.ytimg.com/vi/${yti[1]}/maxresdefault.jpg" onclick="this.select()" readonly />
-                                    <br /><input name="imageURL" id="copyimageURL2" class="text" size="70" type="text" value="http://i3.ytimg.com/vi/${yti[1]}/hqdefault.jpg" onclick="this.select()" readonly />
-                                    <p>Nhấp chuột phải/Ctrl Click vào hình ảnh để tải xuống. Chọn URL ở trên và sao chép vào clipboard của bạn.</p>`);
+                                    <p><img src="https://i3.ytimg.com/vi/${yti[1]}/maxresdefault.jpg" class="image-large" /></p>
+                                    <p><img src="https://i3.ytimg.com/vi/${yti[1]}/hqdefault.jpg" class="image-small" /></p>`);
                 } else {
                     $("#msg").html("<p>URL YouTube không hợp lệ. Vui lòng thử lại.</p>");
                 }
@@ -38,25 +34,24 @@
     </script>
 </head>
 <body>
-    <header>
-        <h1>Lấy Hình Thu Nhỏ Video YouTube</h1>
-        <p>Để lấy hình thu nhỏ của bất kỳ video YouTube nào, hãy nhập URL vào ô bên dưới.</p>
-        <p>URL của bạn nên trông như thế này:<br />
-            <em>http://www.youtube.com/watch?v=erLk59H86ww</em>
-        </p>
-    </header>
-    <main>
-        <input type="text" class="text" id="youtubeLink" size="60" />
-        <button id="get" class="button">Lấy Hình Thu Nhỏ YouTube</button>
-        <div id="msg"></div>
-    </main>
-    <footer>
-        <div id="ask">
-            Công cụ đơn giản và thanh lịch.<br />
-            Thấy hữu ích? Gửi tôi một ít tiền thưởng trên <a href="http://ejimford.tip.me">ChangeTip</a> hoặc <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=999TJXU4AKH3S">PayPal</a>!<br />
-            <br />
-            phát triển bởi <a href="http://web.ejimford.com">Hanh Hello</a>
-        </div>
-    </footer>
+    <div class="container">
+        <header>
+            <h1>Lấy Hình Thu Nhỏ Video YouTube</h1>
+            <p>Để lấy hình thu nhỏ của bất kỳ video YouTube nào, hãy nhập URL vào ô bên dưới.</p>
+            <p>URL của bạn nên trông như thế này:<br />
+                <em>http://www.youtube.com/watch?v=erLk59H86ww</em>
+            </p>
+        </header>
+        <main>
+            <input type="text" class="text" id="youtubeLink" size="60" />
+            <button id="get" class="button">Lấy Hình Thu Nhỏ YouTube</button>
+            <div id="msg"></div>
+        </main>
+        <footer>
+            <div id="ask">
+                phát triển bởi <a href="http://web.ejimford.com">Hanh Hello</a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
