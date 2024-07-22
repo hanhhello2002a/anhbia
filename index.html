@@ -20,25 +20,8 @@
                 var yti = ytl.match(/(?:https?:\/\/)?(?:www\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
                 if (yti) {
                     $("#msg").html(`<h1>Hình Thu Nhỏ YouTube</h1>
-                                    <div class="thumbnail-container">
-                                        <div class="ad-side">
-                                            <!-- Quảng cáo bên cạnh thumbnail -->
-                                            <script type="text/javascript">
-                                                atOptions = {
-                                                    'key' : 'e78b0d50fbcdfdeb30e50f21a98691a9',
-                                                    'format' : 'iframe',
-                                                    'height' : 250,
-                                                    'width' : 300,
-                                                    'params' : {}
-                                                };
-                                            </script>
-                                            <script type="text/javascript" src="//www.topcreativeformat.com/e78b0d50fbcdfdeb30e50f21a98691a9/invoke.js"></script>
-                                        </div>
-                                        <div class="thumbnails">
-                                            <p><img src="https://i3.ytimg.com/vi/${yti[1]}/maxresdefault.jpg" class="image" /></p>
-                                            <p><img src="https://i3.ytimg.com/vi/${yti[1]}/hqdefault.jpg" class="image" /></p>
-                                        </div>
-                                    </div>
+                                    <p><img src="https://i3.ytimg.com/vi/${yti[1]}/maxresdefault.jpg" class="image" /></p>
+                                    <p><img src="https://i3.ytimg.com/vi/${yti[1]}/hqdefault.jpg" class="image" /></p>
                                     <h2>URL Hình Ảnh:</h2>
                                     <br /><input name="imageURL" id="copyimageURL1" class="text" size="70" type="text" value="https://i3.ytimg.com/vi/${yti[1]}/maxresdefault.jpg" onclick="this.select()" readonly />
                                     <br /><input name="imageURL" id="copyimageURL2" class="text" size="70" type="text" value="http://i3.ytimg.com/vi/${yti[1]}/hqdefault.jpg" onclick="this.select()" readonly />
@@ -57,6 +40,19 @@
 <body>
     <header>
         <h1>Lấy Hình Thu Nhỏ Video YouTube</h1>
+        <div class="ad-header">
+            <!-- Quảng cáo trên đầu trang -->
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '6b4c5f125e182e74e5f371168a51b8cc',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/6b4c5f125e182e74e5f371168a51b8cc/invoke.js"></script>
+        </div>
         <p>Để lấy hình thu nhỏ của bất kỳ video YouTube nào, hãy nhập URL vào ô bên dưới.</p>
         <p>URL của bạn nên trông như thế này:<br />
             <em>http://www.youtube.com/watch?v=erLk59H86ww</em>
@@ -86,11 +82,16 @@
         </div>
         <div class="ad-footer">
             <!-- Quảng cáo chân trang -->
-            <ins class="adsbygoogle"
-                 style="display:block;"
-                 data-ad-client="ca-pub-5707284136657933"
-                 data-ad-slot="1234567890"
-                 data-ad-format="rectangle"></ins>
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '6b4c5f125e182e74e5f371168a51b8cc',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/6b4c5f125e182e74e5f371168a51b8cc/invoke.js"></script>
         </div>
     </footer>
 </body>
