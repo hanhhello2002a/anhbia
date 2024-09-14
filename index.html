@@ -15,7 +15,7 @@
     <script src="https://www.google-analytics.com/analytics.js"></script>
     <script>
         $(document).ready(function() {
-            $("#get").click(function () {
+            $("#youtubeLink").on("input", function () {
                 var ytl = $("#youtubeLink").val();
                 var yti = ytl.match(/(?:https?:\/\/)?(?:www\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
                 if (yti) {
@@ -25,10 +25,6 @@
                 } else {
                     $("#msg").html("<p>URL YouTube không hợp lệ. Vui lòng thử lại.</p>");
                 }
-            });
-
-            $("#copyimageURL1, #copyimageURL2").click(function () {
-                $(this).select();
             });
         });
     </script>
@@ -44,7 +40,6 @@
         </header>
         <main>
             <input type="text" class="text" id="youtubeLink" size="60" />
-            <button id="get" class="button">Lấy Hình Thu Nhỏ YouTube</button>
             <div id="msg"></div>
         </main>
         <footer>
