@@ -19,9 +19,12 @@
                 var ytl = $("#youtubeLink").val();
                 var yti = ytl.match(/(?:https?:\/\/)?(?:www\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
                 if (yti) {
+                    var imgMaxRes = `https://i3.ytimg.com/vi/${yti[1]}/maxresdefault.jpg`;
+                    var imgHQ = `https://i3.ytimg.com/vi/${yti[1]}/hqdefault.jpg`;
+                    
                     $("#msg").html(`<h1>Hình Thu Nhỏ YouTube</h1>
-                                    <p><img src="https://i3.ytimg.com/vi/${yti[1]}/maxresdefault.jpg" class="image-large" /></p>
-                                    <p><img src="https://i3.ytimg.com/vi/${yti[1]}/hqdefault.jpg" class="image-small" /></p>`);
+                                    <p><a href="${imgMaxRes}" download><img src="${imgMaxRes}" class="image-large" /></a></p>
+                                    <p><a href="${imgHQ}" download><img src="${imgHQ}" class="image-small" /></a></p>`);
                 } else {
                     $("#msg").html("<p>URL YouTube không hợp lệ. Vui lòng thử lại.</p>");
                 }
