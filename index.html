@@ -9,8 +9,184 @@
     <meta property="og:site_name" content="Lấy Hình Thu Nhỏ Video YouTube">
     <meta property="og:description" content="Tải xuống hình thu nhỏ mặc định của bất kỳ video YouTube nào với công cụ đơn giản này.">
     <title>Lấy Hình Thu Nhỏ Video YouTube</title>
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,700,400italic,700italic|Ovo" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        @charset "UTF-8";
+        /* CSS Document */
+        
+        body {
+            text-align: center;
+            font-family: 'Muli', Helvetica, Arial, sans-serif;
+            font-size: 140%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Căn giữa theo chiều dọc */
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        .container {
+            transform: scale(0.55); /* Thu nhỏ trang xuống còn 55% */
+            transform-origin: top center; /* Đặt gốc của phép biến đổi ở giữa phía trên */
+            width: 100%;
+            max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Ovo', sans-serif;
+        }
+        
+        h1 {
+            font-size: 300%;
+            margin-bottom: 20px; /* Thêm khoảng cách dưới tiêu đề */
+        }
+        
+        .button {
+            background-color: #44c767;
+            -moz-border-radius: 28px;
+            -webkit-border-radius: 28px;
+            border-radius: 28px;
+            border: 1px solid #18ab29;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: arial;
+            font-size: 17px;
+            padding: 16px 31px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #2f6627;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Thêm hiệu ứng chuyển màu và chuyển động */
+        }
+        
+        .button:hover {
+            background-color: #5cbf2a;
+        }
+        
+        .button:active {
+            position: relative;
+            top: 1px;
+            transform: scale(0.98); /* Hiệu ứng thu nhỏ nút khi bấm */
+        }
+        
+        label {
+            display: block;
+        }
+        
+        input.text {
+            border-style: solid;
+            font-size: 30px; /* Tăng kích thước chữ trong ô nhập URL */
+            box-shadow: 3px 2px 5px 0px rgba(42, 42, 42, .75);
+            padding: 10px; /* Tăng độ rộng của padding */
+            border-width: 2px; /* Tăng độ rộng viền */
+            border-radius: 1px;
+            border-color: #363636;
+            text-align: center;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng thay đổi viền và bóng */
+            width: 100%; /* Chiếm toàn bộ chiều rộng container */
+        }
+        
+        input.text:focus, textarea:focus {
+            border-color: #44c767;
+            box-shadow: 0 0 8px rgba(68, 199, 103, 0.5); /* Hiệu ứng khi người dùng focus vào input */
+        }
+        
+        textarea {
+            font-size: 14px;
+            text-align: left;
+        }
+        
+        ul.quicklist {
+            list-style-type: none;
+            text-align: left;
+            margin: 0px;
+            padding: 0px;
+            font-size: 24px;
+        }
+        
+        ul.quicklist li {
+            padding: 0px 0px 14px 0px;
+            margin: 0px 0px 14px 0px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        ul.quicklist li a {
+            display: block;
+            text-decoration: none;
+            background-size: contain;
+            padding: 12px 72px;
+        }
+        
+        ul.quicklist li a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .image-large {
+            max-width: 100%; /* Điều chỉnh kích thước tối đa của ảnh lớn hơn */
+            height: auto;
+        }
+        
+        .image-small {
+            max-width: 50%; /* Điều chỉnh kích thước tối đa của ảnh nhỏ hơn */
+            height: auto;
+        }
+        
+        a.state0 {
+            color: #000;
+            background: #fff url("images/tick0.png") no-repeat left top;
+        }
+        
+        a.state1, a.state0.done {
+            color: #CCC;
+            text-decoration: line-through !important;
+            background: #fff url("images/tick1.png") no-repeat left top;
+            background-size: contain;
+        }
+        
+        #ask {
+            font-size: 120%; /* Tăng kích thước chữ */
+            font-weight: bold; /* In đậm chữ */
+            font-style: italic; /* Giữ kiểu chữ nghiêng nếu cần */
+            margin-top: 20px; /* Khoảng cách phía trên để cách xa các phần khác */
+        }
+        
+        /* Thêm hiệu ứng hover cho các liên kết */
+        a {
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: #44c767;
+        }
+
+        .input-container {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .paste-button {
+            margin-left: 15px; /* Tăng khoảng cách giữa ô nhập URL và nút */
+            background-color: #44c767;
+            border: none;
+            padding: 15px 30px; /* Tăng kích thước padding của nút */
+            color: white;
+            cursor: pointer;
+            font-size: 30px; /* Tăng kích thước chữ trên nút */
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .paste-button:hover {
+            background-color: #5cbf2a;
+        }
+
+        .error-msg {
+            color: red;
+            font-size: 25px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://www.google-analytics.com/analytics.js"></script>
     <script>
@@ -25,9 +201,23 @@
                     $("#msg").html(`<h1>Hình Thu Nhỏ YouTube</h1>
                                     <p><a href="${imgMaxRes}" download><img src="${imgMaxRes}" class="image-large" /></a></p>
                                     <p><a href="${imgHQ}" download><img src="${imgHQ}" class="image-small" /></a></p>`);
+                    $(".error-msg").hide(); // Ẩn thông báo lỗi nếu đúng
                 } else {
-                    $("#msg").html("<p>URL YouTube không hợp lệ. Vui lòng thử lại.</p>");
+                    $(".error-msg").show(); // Hiển thị thông báo lỗi
+                    setTimeout(function() {
+                        $(".error-msg").fadeOut(); // Tự động ẩn thông báo sau 3 giây
+                    }, 3000);
                 }
+            });
+
+            // Hàm dán URL vào ô nhập
+            $(".paste-button").on("click", function() {
+                navigator.clipboard.readText().then(function(text) {
+                    $("#youtubeLink").val(text);
+                    $("#youtubeLink").trigger("input"); // Gọi lại sự kiện input sau khi dán
+                }).catch(function(error) {
+                    alert('Không thể dán nội dung từ clipboard.');
+                });
             });
         });
     </script>
@@ -42,8 +232,12 @@
             </p>
         </header>
         <main>
-            <input type="text" class="text" id="youtubeLink" size="60" />
+            <div class="input-container">
+                <input type="text" class="text" id="youtubeLink" size="60" />
+                <button class="paste-button">Dán URL</button>
+            </div>
             <div id="msg"></div>
+            <div class="error-msg">URL không hợp lệ. Vui lòng thử lại.</div>
         </main>
         <footer>
             <div id="ask">
